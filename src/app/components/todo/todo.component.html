@@ -1,0 +1,22 @@
+<section class="todo-wrapper">
+    <h1>Your definitive task manager!</h1>
+    
+    <div class="container" *ngIf="hasTasks">
+        <ul>
+            <li 
+                *ngFor="let todo of todos; index as i" 
+                [ngClass]="{'completed': todo.completed, 'pending': !todo.completed}"
+            >
+                <span class="task-number">{{i + 1}}</span>
+                <span class="task-title">{{todo.title}}</span>
+                <span class="task-priority" [class]="'priority-' + todo.priority">
+                    {{todo.priority}}
+                </span>
+            </li>
+        </ul>
+    </div>
+    
+    <div *ngIf="!hasTasks" class="empty-state">
+        <p>No tasks available!</p>
+    </div>
+</section>

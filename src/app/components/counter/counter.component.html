@@ -1,0 +1,13 @@
+<section class="counter-outer-section">
+    <h2>Counter dell'astropuzzo</h2>
+    <label for="countValue" class="count-label">{{countValue}}</label>
+   <div class="buttons">
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+  </div>
+    <div class="label-section">       
+        <label>Reset a: </label>       
+        <input type="number" [(ngModel)]="resetValue">       
+        <button (click)="reset()">Reset</button>     
+    </div>
+</section>

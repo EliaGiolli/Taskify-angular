@@ -1,0 +1,23 @@
+<!-- navbar.component.html -->
+<header class="main-header" role="banner">
+  <div class="container">
+    <h2 class="logo">navbar works!</h2>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li class="nav-item" [ngClass]="{'active': isActive === 'astropuzzo'}"><a href="#" class="nav-link">astropuzzo</a></li>
+        <li class="nav-item" [ngClass]="{'active': isActive === 'puzzo siderale'}"><a href="#" class="nav-link">puzzo siderale</a></li>
+        <li class="nav-item" [ngClass]="{'active': isActive === 'Livorno'}"><a href="#" class="nav-link">Livorno</a></li>
+      </ul>
+    </nav>
+
+    <button
+      class="nav-button"
+      (click)="toggleTheme()"
+      [attr.aria-pressed]="isDarkMode"
+      title="Toggle theme"
+    >
+      {{ isDarkMode ? 'dark' : 'light' }}
+    </button>
+  </div>
+</header>

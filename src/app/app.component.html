@@ -1,5 +1,7 @@
+<app-navbar></app-navbar>
 <main class="main">
-       <app-user-card [user]="currentUser" (updateUser)="handleUpdateUser()"></app-user-card>
+       <app-todo />
+       <router-outlet />
+       <app-counter></app-counter>
 </main>
 
-<router-outlet />

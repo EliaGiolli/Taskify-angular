@@ -1,0 +1,49 @@
+@use '_variables' as *;
+
+.counter-outer-section{
+    margin-block: 3rem;
+    padding: 1.5rem;
+    width: 500px;
+    min-height:300px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items:center;
+    text-align:center;
+    background-color: $color-light;
+    border-radius: 11px;
+
+    h2{
+        color: $color-text-accent-dark;
+        text-transform: uppercase;
+        font-size: $font-2xl;
+        margin-block: 1rem;
+    }
+    .count-label{
+        font-size: $font-2xl;
+        padding:1rem;
+        margin-bottom: 1rem;
+        background-color: $color-secondary;
+        color: $color-light;
+        border-radius: 15px;
+        width: 100%;
+    }
+    .buttons{
+        display: flex;
+        gap: 6px;
+        
+        button{
+            background-color: $color-accent;
+            color: $color-light;
+            padding: 1rem;
+            border-radius: 15px;
+        }
+        button:hover{
+            background-color: $color-primary;
+        }
+    }
+
+    .label-section{
+        margin-top: 1.5rem;
+    }
+}
