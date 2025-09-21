@@ -8,7 +8,36 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, $color-primary 0%, $color-secondary 50%, $color-light 100%);
+  padding-top: 2rem;
+}
+
+.grid-container {
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 2fr; // 1 colonna per input, 2 colonne per todo
+  gap: 2rem;
+  margin-bottom: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Layout a colonna singola su mobile
+    gap: 1rem;
+  }
+}
+
+.input-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-light;
+  border-radius: 15px;
+}
+
+.todo-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }

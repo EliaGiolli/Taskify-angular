@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { todos, Todo } from '../../tasks';
+import { Todo } from '../../tasks';
 
 @Component({
   selector: 'app-todo',
@@ -9,6 +9,9 @@ import { todos, Todo } from '../../tasks';
   styleUrl: './todo.component.scss'
 })
 export class TodoComponent {
-  todos: Todo[] = todos;
-  hasTasks: boolean = todos.length > 0;
+  @Input() todos: Todo[] = [];
+  
+  get hasTasks(): boolean {
+    return this.todos.length > 0;
+  }
 }

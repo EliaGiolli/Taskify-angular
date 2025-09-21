@@ -1,10 +1,8 @@
 @use '_variables' as *;
 
 .todo-wrapper {
-    max-width: 600px;
     width: 100%;
     background-color: $color-light;
-    margin: 2rem auto;
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -37,6 +35,8 @@
             list-style: none; 
             padding: 0;
             margin: 0;
+            columns: 1 !important; // Forza una singola colonna
+            column-count: 1 !important; // Forza una singola colonna
 
             li {
                 padding: 1rem;
@@ -50,6 +50,8 @@
                 align-items: center;
                 gap: 1rem;
                 color: $color-text-tertiary;
+                break-inside: avoid; // Evita che gli elementi si spezzino tra colonne
+                page-break-inside: avoid; // Supporto per browser più vecchi
 
                 &:hover {
                     background-color: rgba($color-primary, 0.1);

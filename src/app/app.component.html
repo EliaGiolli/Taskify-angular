@@ -1,7 +1,14 @@
 <app-navbar></app-navbar>
 <main class="main">
-       <app-todo />
-       <router-outlet />
-       <app-counter></app-counter>
+    <div class="grid-container">
+        <div class="input-column">
+            <app-todo-input (todoAdded)="onTodoAdded($event)" />
+        </div>
+        <div class="todo-column">
+            <app-todo [todos]="todos" />
+        </div>
+    </div>
+    <router-outlet />
+    <app-counter></app-counter>
 </main>
 
