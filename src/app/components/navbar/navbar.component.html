@@ -5,9 +5,8 @@
     <p>Your definitive task manager!</p>
   </div>
 
-  @if(isLightMode){
-  <i class="fas fa-sun icon-sun"></i>
-  } @else {
-  <i class="fas fa-moon icon-moon"></i>
-  }
+  <i 
+    [class]="isDarkMode ? 'fas fa-sun icon-sun' : 'fas fa-moon icon-moon'"
+    (click)="toggleTheme()"
+  ></i>
 </header>

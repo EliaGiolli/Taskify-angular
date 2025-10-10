@@ -9,7 +9,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 50%, $color-light 100%);
+  background-color: $color-secondary;
   padding-top: 2rem;
 }
 

@@ -4,7 +4,7 @@
 .main-header {
   width: 100%;
   min-height: 100px;
-  background: $color-background;
+  background: $color-background-light;
   color: $color-text-primary;
   padding: 1rem 1rem;
   border-bottom: 3px solid $color-accent;
@@ -30,19 +30,26 @@
         font-weight: 700;
         letter-spacing: 0.5px;
       }
+
+      p{
+        font-size: $font-md;
+        color: $color-text-tertiary;
+        margin: 0;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
   }
 
-  .icon-sun{
+  .icon-sun, .icon-moon{
     font-size: $font-2xl;
-    color: $color-text-primary;
+    color: $color-text-accent-dark;
     cursor: pointer;
     margin-right: 2rem;
-    
+    transition: all 0.3s ease;
 
     &:hover{
-      color: $color-text-accent-dark;
+      color: $color-text-accent-light;
       transform: scale(1.1);
-      transition: all 0.3s ease;
     }
   }
 

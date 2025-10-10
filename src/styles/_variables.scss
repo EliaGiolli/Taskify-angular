@@ -12,11 +12,19 @@ $font-xs: 0.75rem;
   $color-light: #ffffff;             
   $color-accent: #FF4C4C;            
   $color-background: #1E102A;       
+  $color-background-light: #f8f9fa;  
+  $color-background-dark: #1E102A;       
 
   /* Texts */
   $color-text-primary: #FFFFFF;      
   $color-text-secondary: #B0B0B0; 
   $color-text-tertiary: #333333;  
   $color-text-accent-dark: #B22234;  
-  $color-text-active: #FFD700;
+  $color-text-accent-light: #FFD700;
+  
+  /* Theme-specific colors */
+  $color-text-primary-light: #212529;    
+  $color-text-primary-dark: #FFFFFF;     
+  $color-text-secondary-light: #6c757d;  
+  $color-text-secondary-dark: #B0B0B0;
 

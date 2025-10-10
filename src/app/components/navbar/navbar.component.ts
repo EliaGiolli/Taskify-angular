@@ -2,6 +2,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,18 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
 
-  isLightMode = true;
+  constructor(public themeService: ThemeService) {}
 
   toggleTheme() {
-    //...
+    this.themeService.toggleTheme();
+  }
+
+  get currentTheme() {
+    return this.themeService.isDarkMode() ? 'dark' : 'light';
+  }
+
+  get isDarkMode() {
+    return this.themeService.isDarkMode();
   }
 }
 
