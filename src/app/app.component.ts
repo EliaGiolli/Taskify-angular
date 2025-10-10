@@ -5,6 +5,8 @@ import { TodoComponent } from './components/todo/todo.component';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';
 import { todos, Todo } from './tasks';
 
+import { TasksService } from './services/tasks.service';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -17,20 +19,10 @@ import { todos, Todo } from './tasks';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  todos:Todo[] = todos;
-  onTodoAdded(todoText: string){
-    const newTodo: Todo = {
-      id: Math.max(...this.todos.map(t => t.id)) + 1,
-      title: todoText,
-      description: '',
-      completed: false,
-      priority: 'medium',
-      category: 'Personal',
-      dueDate: null,
-      createdAt: new Date(),
-      tags: []
-    };
 
-    this.todos.push(newTodo);
+  constructor(private taskService: TasksService) {}
+
+  onAddTodo(todo: Todo){
+    this.taskService.addTodo(todo);
   }
 }

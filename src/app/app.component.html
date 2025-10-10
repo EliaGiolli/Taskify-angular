@@ -2,10 +2,10 @@
 <main class="main">
     <div class="grid-container">
         <div class="input-column">
-            <app-todo-input (todoAdded)="onTodoAdded($event)" />
+            <app-todo-input (todoAdded)="onAddTodo($event)" />
         </div>
         <div class="todo-column">
-            <app-todo [todos]="todos" />
+            <app-todo />
         </div>
     </div>
     <router-outlet />

@@ -1,17 +1,29 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Todo } from '../../tasks';
+import { ButtonComponent } from '../button/button.component';
+
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-todo',
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss'
 })
 export class TodoComponent {
-  @Input() todos: Todo[] = [];
-  
+
+  constructor(public taskService: TasksService) {}
+
+  get todos() {
+    return this.taskService.todoList();
+  }
+
   get hasTasks(): boolean {
-    return this.todos.length > 0;
+    return this.taskService.todoList().length > 0;
+  }
+
+  deleteTodo(id:string){
+    this.taskService.deleteTodo(id);
   }
 }
