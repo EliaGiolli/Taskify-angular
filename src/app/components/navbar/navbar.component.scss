@@ -3,134 +3,47 @@
 
 .main-header {
   width: 100%;
+  min-height: 100px;
   background: $color-background;
   color: $color-text-primary;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   border-bottom: 3px solid $color-accent;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
 
   .container {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .logo{
-    display: block;
-    font-size: $font-2xl;
-    color: $color-text-accent-dark;
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-  }
-
-  .nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1.25rem;
-    align-items: center;
-  }
-
-  .nav-item {
-    &.active {
-      .nav-link {
-        background-color: $color-secondary;
-        color: $color-text-primary;
-        font-weight: 600;
-      }
-    }
-  }
-  
-  .nav-link {
-    color: $color-text-secondary;
-    text-decoration: none;
-    font-size: $font-md;
-    padding: 0.25rem 0.375rem;
-    border-radius: 6px;
-    transition: all 180ms ease;
-    display: inline-block;
     
+      .logo{
+        
+        font-size: $font-3xl;
+        text-transform: uppercase;
+        color: $color-text-accent-dark;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
   }
-  .nav-link:hover,
-  .nav-link:focus {
+
+  .icon-sun{
+    font-size: $font-2xl;
     color: $color-text-primary;
-    background: rgba(255,255,255,0.04);
-    transform: translateY(-1px);
-  }
-  
-  .nav-button {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.08);
-    color: $color-text-primary;
-    padding: 0.4rem 0.75rem;
-    border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: $font-sm;
-    transition: background 160ms ease, transform 120ms ease, box-shadow 120ms ease;
-    box-shadow: none;
-  }
-  
-  .nav-button:hover {
-    background: rgba(255,255,255,0.03);
-    transform: translateY(-2px);
-  }
-  
-  .nav-button:active {
-    transform: translateY(0);
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-  }
+    margin-right: 2rem;
+    
 
-  /* small screens: collapse nav center and hide links behind simple layout */
-  @media (max-width: 740px) {
-    .container {
-      gap: 0.5rem;
-    }
-
-    .nav {
-      display: none; /* per semplicità: puoi sostituire con hamburger menu */
-    }
-
-    .logo {
-      font-size: $font-lg;
-    }
-
-    .nav-button {
-      padding: 0.35rem 0.6rem;
+    &:hover{
+      color: $color-text-accent-dark;
+      transform: scale(1.1);
+      transition: all 0.3s ease;
     }
   }
 
-  /* DARK MODE (scoped to il solo componente: .dark aggiunta via HostBinding) */
-  &.dark {
-    background: #0f0c13;
-    color: $color-text-active;
-
-    .logo {
-      color: $color-text-active;
-    }
-
-    .nav-link {
-      color: $color-text-tertiary;
-    }
-
-    .nav-button {
-      border-color: rgba(255,215,0,0.14);
-      background: linear-gradient(180deg, rgba(255,215,0,0.06), transparent);
-      color: $color-text-active;
-    }
-
-    border-bottom-color: darken($color-accent, 8%);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.6);
-  }
 }

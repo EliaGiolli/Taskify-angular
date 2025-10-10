@@ -2,6 +2,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -10,11 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  isActive = 'astropuzzo'; 
-  // aggiunge la classe 'dark' all'elemento host <app-navbar>
-  @HostBinding('class.dark') isDarkMode = false;
+
+  isLightMode = true;
 
   toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
+    //...
   }
 }
+

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CounterComponent } from './components/counter/counter.component';
 import { RouterOutlet } from '@angular/router';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';
@@ -13,7 +12,6 @@ import { todos, Todo } from './tasks';
     TodoComponent, 
     TodoInputComponent,
     NavbarComponent, 
-    CounterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
