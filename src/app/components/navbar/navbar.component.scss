@@ -4,10 +4,9 @@
 .main-header {
   width: 100%;
   min-height: 100px;
-  background: $color-background-light;
+  background: $color-light;
   color: $color-text-primary;
   padding: 1rem 1rem;
-  border-bottom: 3px solid $color-accent;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;

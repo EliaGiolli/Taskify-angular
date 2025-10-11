@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Todo } from '../../tasks';
 import { ButtonComponent } from '../button/button.component';
 
 import { TasksService } from '../../services/tasks.service';

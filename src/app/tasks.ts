@@ -1,16 +1,5 @@
 // Todo interface definition
-export interface Todo {
-  id: number;
-  title: string;
-  description: string;
-  completed: boolean;
-  priority: 'low' | 'medium' | 'high';
-  category: string;
-  dueDate: Date | null;
-  createdAt: Date;
-  tags: string[];
-}
-
+import { Todo } from "./components/todo-input/tasks";
 // Sample todos data
 export const todos: Todo[] = [
   {

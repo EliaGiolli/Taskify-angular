@@ -1,4 +1,12 @@
 <div class="todo-input-container">
-    <input type="text" placeholder="Add a new task..." id="todo-input" [(ngModel)]="todoText">
-    <app-button (clicked)="onButtonClick()">Add task</app-button>
+    <input id="todo-input" [(ngModel)]="todoTitle" placeholder="Enter todo title" />
+    <textarea [(ngModel)]="todoDescription" placeholder="Enter description"></textarea>
+    <select [(ngModel)]="todoPriority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select>
+    <input type="text" [(ngModel)]="todoCategory" placeholder="Enter category" />
+    <input type="date" [(ngModel)]="todoDueDate" />
+    <app-button (click)="addTodo()">Add Todo</app-button>
 </div>

@@ -1,5 +1,6 @@
 import { Injectable, signal } from '@angular/core';
-import { Todo, todos } from '../tasks';
+import { todos } from '../tasks';
+import { Todo } from '../components/todo-input/tasks';
 
 @Injectable({
   providedIn: 'root'

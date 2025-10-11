@@ -9,7 +9,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $color-secondary;
+  background-color: $color-background-light;
   padding-top: 2rem;
 }
 
@@ -17,7 +17,7 @@ main {
   width: 90%;
   max-width: 1200px;
   display: grid;
-  grid-template-columns: 1fr 2fr; // 1 colonna per input, 2 colonne per todo
+  grid-template-columns: 1fr 1fr; // 1 colonna per input, 2 colonne per todo
   gap: 2rem;
   margin-bottom: 2rem;
   
@@ -29,10 +29,11 @@ main {
 
 .input-column {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  background-color: $color-light;
-  border-radius: 15px;
+  background-color: $color-background-light;
+  width: 100%;
 }
 
 .todo-column {
