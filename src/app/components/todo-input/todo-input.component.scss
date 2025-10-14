@@ -1,51 +1,88 @@
 @use 'variables' as *;
 
 .todo-input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(145deg, rgba($color-light, 0.95), rgba($color-light, 0.85));
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  max-width: 420px;
+  width: 100%;
+  min-height: 360px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  .internal-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     gap: 1rem;
-    padding: 1.5rem;
-    background-color: rgba($color-light, 0.95);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    max-width: 400px;
-    width: 100%;
-    min-height: 300px;
+  }
+  h2{
+    font-size: $font-2xl;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-text-accent-dark;
     
-    #todo-input {
-        width: 100%;
-        padding: 1rem 1.25rem;
-        border: 2px solid rgba($color-primary, 0.2);
-        border-radius: 12px;
-        font-size: $font-md;
-        font-family: inherit;
-        background-color: $color-light;
-        color: $color-text-tertiary;
-        transition: all 0.3s ease;
-        outline: none;
-        
-        &::placeholder {
-            color: $color-text-secondary;
-            font-style: italic;
-        }
-        
-        &:hover {
-            border-color: rgba($color-primary, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba($color-primary, 0.15);
-        }
-        
-        &:focus {
-            border-color: $color-primary;
-            box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        &:focus::placeholder {
-            opacity: 0.6;
-        }
+  }
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba($color-primary, 0.2);
+    border-radius: 12px;
+    font-size: $font-md;
+    font-family: inherit;
+    background-color: rgba($color-light, 0.95);
+    color: $color-text-secondary;
+    transition: all 0.25s ease;
+    outline: none;
+
+    &::placeholder {
+      color: $color-text-secondary;
+      opacity: 0.8;
     }
+
+    &:hover {
+      border-color: rgba($color-primary, 0.4);
+      background-color: rgba($color-light, 1);
+    }
+
+    &:focus {
+      border-color: $color-primary;
+      background-color: rgba($color-light, 1);
+      box-shadow: 0 0 0 4px rgba($color-primary, 0.15);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, $color-primary 50%), 
+                      linear-gradient(135deg, $color-primary 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  app-button {
+    margin-top: 0.5rem;
+    align-self: flex-end;
+  }
 }

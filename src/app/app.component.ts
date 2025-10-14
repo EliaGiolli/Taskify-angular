@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TasksService } from './services/tasks.service';
-import { Todo } from './components/todo-input/tasks';
+import { Todo } from './components/todo-input/tasks.model';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';

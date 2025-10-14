@@ -1,12 +1,14 @@
 <div class="todo-input-container">
-    <input id="todo-input" [(ngModel)]="todoTitle" placeholder="Enter todo title" />
-    <textarea [(ngModel)]="todoDescription" placeholder="Enter description"></textarea>
-    <select [(ngModel)]="todoPriority">
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-    </select>
-    <input type="text" [(ngModel)]="todoCategory" placeholder="Enter category" />
-    <input type="date" [(ngModel)]="todoDueDate" />
-    <app-button (click)="addTodo()">Add Todo</app-button>
+    <div class="internal-wrapper">
+        <h2>Add a todo</h2>
+        <input id="todo-input" [(ngModel)]="todoTitle" placeholder="Enter todo title" />
+        <select [(ngModel)]="todoPriority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <input type="text" [(ngModel)]="todoCategory" placeholder="Enter category" />
+        <input type="date" [(ngModel)]="todoDueDate" />
+        <app-button (click)="addTodo()">Add Todo</app-button>
+    </div>
 </div>
