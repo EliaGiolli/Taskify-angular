@@ -4,12 +4,18 @@ import { Todo } from './components/todo-input/tasks.model';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [NavbarComponent, TodoComponent, TodoInputComponent]
+  imports: [
+    NavbarComponent, 
+    TodoComponent, 
+    TodoInputComponent, 
+    FooterComponent
+  ]
 })
 export class AppComponent {
   

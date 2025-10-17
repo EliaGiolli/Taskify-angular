@@ -1,12 +1,28 @@
-<!-- navbar.component.html -->
-<header class="main-header" role="banner">
-  <div class="container">
-    <h2 class="logo">Taskify</h2>
-    <p>Your definitive task manager!</p>
+<header 
+  class="main-header" 
+  role="banner"
+  aria-labelledby="logo-taskify"
+>
+  <div class="logo-section">
+    <div class="logo-wrapper">
+      <i 
+        class="fa fa-tasks icon" 
+        aria-hidden="true">
+      </i>
+      <h1 
+        class="logo"
+        id="logo-taskify"
+        >
+        Taskify
+      </h1>
+    </div>
+    <p class="tagline">Your definitive task manager!</p>
   </div>
 
   <i 
-    [class]="isDarkMode ? 'fas fa-sun icon-sun' : 'fas fa-moon icon-moon'"
+    class="theme-toggle"
+    [class]="isDarkMode ? 'fas fa-sun theme-toggle' : 'fas fa-moon theme-toggle'"
     (click)="toggleTheme()"
+    aria-label="Toggle theme"
   ></i>
 </header>

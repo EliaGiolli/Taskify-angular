@@ -1,14 +1,57 @@
 <div class="todo-input-container">
-    <div class="internal-wrapper">
-        <h2>Add a todo</h2>
-        <input id="todo-input" [(ngModel)]="todoTitle" placeholder="Enter todo title" />
-        <select [(ngModel)]="todoPriority">
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-        </select>
-        <input type="text" [(ngModel)]="todoCategory" placeholder="Enter category" />
-        <input type="date" [(ngModel)]="todoDueDate" />
-        <app-button (click)="addTodo()">Add Todo</app-button>
+  <form 
+    class="internal-wrapper" 
+    (ngSubmit)="addTodo()" 
+    aria-labelledby="add-todo-form"
+  >
+    <h2 id="add-todo-form">Add a Todo</h2>
+
+    <div class="form-group">
+      <label for="todo-title">Title</label>
+      <input
+        id="todo-title"
+        name="todoTitle"
+        [(ngModel)]="todoTitle"
+        placeholder="Enter todo title"
+        required
+      />
     </div>
+
+    <div class="form-group">
+      <label for="todo-priority">Priority</label>
+      <select
+        id="todo-priority"
+        name="todoPriority"
+        [(ngModel)]="todoPriority"
+        required
+      >
+        <option value="" disabled selected>Select priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="todo-category">Category</label>
+      <input
+        id="todo-category"
+        name="todoCategory"
+        [(ngModel)]="todoCategory"
+        placeholder="Enter category"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="todo-due-date">Due Date</label>
+      <input
+        id="todo-due-date"
+        type="date"
+        name="todoDueDate"
+        [(ngModel)]="todoDueDate"
+      />
+    </div>
+
+    <app-button type="submit">Add Todo</app-button>
+  </form>
 </div>

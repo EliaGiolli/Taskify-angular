@@ -3,53 +3,70 @@
 
 .main-header {
   width: 100%;
-  min-height: 100px;
+  padding: 1rem 2rem;
   background: $color-light;
   color: $color-text-primary;
-  padding: 1rem 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
+  .logo-section {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
-    
-      .logo{
-        
+    justify-content: center;
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .icon {
         font-size: $font-3xl;
+        color: $color-text-accent-dark;
+        transition: all 0.3s ease;
+      }
+
+      .logo {
+        font-size: $font-3xl;
+        font-weight: 700;
         text-transform: uppercase;
         color: $color-text-accent-dark;
-        margin: 0;
-        font-weight: 700;
-        letter-spacing: 0.5px;
       }
+    }
 
-      p{
-        font-size: $font-md;
-        color: $color-text-tertiary;
-        margin: 0;
-        font-weight: 400;
-        letter-spacing: 0.5px;
-      }
-  }
-
-  .icon-sun, .icon-moon{
-    font-size: $font-2xl;
-    color: $color-text-accent-dark;
-    cursor: pointer;
-    margin-right: 2rem;
-    transition: all 0.3s ease;
-
-    &:hover{
-      color: $color-text-accent-light;
-      transform: scale(1.1);
+    .tagline {
+      font-size: $font-md;
+      color: $color-text-tertiary;
+      font-weight: 400;
+      margin-top: 0.25rem;
+      letter-spacing: 0.5px;
     }
   }
 
+  .theme-toggle {
+    font-size: $font-2xl;
+    cursor: pointer;
+    color: $color-text-accent-dark;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $color-text-accent-light;
+      transform: scale(1.2);
+    }
+  }
+
+  // Responsive
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    .theme-toggle {
+      align-self: flex-end;
+    }
+  }
 }

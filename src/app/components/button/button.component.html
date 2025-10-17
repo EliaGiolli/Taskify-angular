@@ -1,4 +1,8 @@
-<button class="customBtn" (click)="clicked.emit()">
+<button
+    type="button"
+    class="customBtn" 
+    (click)="clicked.emit()"
+    >
     <!--ng-content è l'equivalente di children in react-->
     <ng-content></ng-content>
 </button>

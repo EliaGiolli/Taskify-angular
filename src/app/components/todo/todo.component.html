@@ -1,5 +1,5 @@
-<section class="todo-wrapper">
-    <h1>Your definitive task manager!</h1>
+<section class="todo-wrapper" aria-labelledby="main-title">
+    <h2 id="main-title">Your definitive task manager!</h2>
     <div class="container" *ngIf="hasTasks">
         <ul>
             <li 
@@ -12,7 +12,12 @@
                     {{todo.priority}}
                 </span>
                 <span>{{todo.category}}</span>
-                <app-button (click)="deleteTodo(todo.id.toString())">Elimina</app-button>
+                <app-button 
+                    (click)="deleteTodo(todo.id.toString())"
+                    aria-label="delete todos"
+                >
+                    Elimina
+                </app-button>
             </li>
         </ul>
     </div>
