@@ -1,9 +1,9 @@
 <section class="todo-wrapper" aria-labelledby="main-title">
     <h2 id="main-title">Your definitive task manager!</h2>
-    <div class="container" *ngIf="hasTasks">
+    <div class="container" *ngIf="hasTasks()">
         <ul>
             <li 
-                *ngFor="let todo of todos; index as i" 
+                *ngFor="let todo of taskService.todoList(); index as i" 
                 [ngClass]="{'completed': todo.completed, 'pending': !todo.completed}"
             >
                 <span class="task-number">{{i + 1}}</span>
@@ -22,7 +22,7 @@
         </ul>
     </div>
     
-    <div *ngIf="!hasTasks" class="empty-state">
+    <div *ngIf="!hasTasks()" class="empty-state">
         <p>No tasks available!</p>
     </div>
 </section>

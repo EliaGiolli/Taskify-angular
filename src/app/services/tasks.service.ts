@@ -16,7 +16,7 @@ export class TasksService {
     const retrievedTodo = localStorage.getItem('task');
 
     if(retrievedTodo){
-      this.todos = JSON.parse(retrievedTodo);
+      this.todos.set(JSON.parse(retrievedTodo));
     }
   }
 
@@ -33,6 +33,6 @@ export class TasksService {
   get todoList() { return this.todos.asReadonly() }
 
   private saveTasks(){
-    localStorage.setItem('tasks', JSON.stringify(this.todos));
+    localStorage.setItem('task', JSON.stringify(this.todos()));
   }
 }

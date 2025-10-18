@@ -18,18 +18,5 @@ import { FooterComponent } from './components/footer/footer.component';
   ]
 })
 export class AppComponent {
-  
   constructor(private tasksService: TasksService) {}
-  
-  get todos(){
-   return this.tasksService.todoList;
-  }
-  
-  onAddTodo(newTodo: Todo) {
-    this.tasksService.addTodo(newTodo);
-  }
-
-  onDeleteTodo(id: string) {
-    this.tasksService.deleteTodo(id);
-  }
 }

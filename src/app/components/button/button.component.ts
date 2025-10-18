@@ -1,6 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-
-import { TasksService } from '../../services/tasks.service';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -10,12 +8,11 @@ import { TasksService } from '../../services/tasks.service';
 })
 export class ButtonComponent {
 
-  constructor(private taskService: TasksService) {}
-
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Output() clicked = new EventEmitter<void>();
 
-  deleteTodo(id:string){
-    this.taskService.deleteTodo(id);
+  handleClick(){
+    this.clicked.emit();
   }
 
 }
