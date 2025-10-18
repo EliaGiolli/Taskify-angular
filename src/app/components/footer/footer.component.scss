@@ -9,18 +9,18 @@
     padding: 2rem;
     width: 100%;
     max-height: 200px;
-    border-top: 3px solid $color-accent;
-    background-color: $color-light;
+    border-top: 3px solid var(--color-accent);
+    background-color: var(--color-light);
 
     h2{
         font-size: $font-2xl;
         font-weight: bold;
-        color: $color-text-tertiary;
+        color: var(--color-text-accent-dark);
     }
 
     h6{
         font-size: $font-md;
         font-weight: 400;
-        color: $color-text-secondary;
+        color: var(--color-text-secondary);
     }
 }

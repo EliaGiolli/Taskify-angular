@@ -4,8 +4,8 @@
 .main-header {
   width: 100%;
   padding: 1rem 2rem;
-  background: $color-light;
-  color: $color-text-primary;
+  background: var(--color-light);
+  color: var(--color-text-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,7 +26,7 @@
 
       .icon {
         font-size: $font-3xl;
-        color: $color-text-accent-dark;
+        color: var(--color-text-accent-dark);
         transition: all 0.3s ease;
       }
 
@@ -34,13 +34,13 @@
         font-size: $font-3xl;
         font-weight: 700;
         text-transform: uppercase;
-        color: $color-text-accent-dark;
+        color: var(--color-text-accent-dark);
       }
     }
 
     .tagline {
       font-size: $font-md;
-      color: $color-text-tertiary;
+      color: var(--color-text-tertiary);
       font-weight: 400;
       margin-top: 0.25rem;
       letter-spacing: 0.5px;
@@ -50,11 +50,11 @@
   .theme-toggle {
     font-size: $font-2xl;
     cursor: pointer;
-    color: $color-text-accent-dark;
+    color: var(--color-text-accent-dark);
     transition: all 0.3s ease;
 
     &:hover {
-      color: $color-text-accent-light;
+      color: var(--color-text-accent-light);
       transform: scale(1.2);
     }
   }

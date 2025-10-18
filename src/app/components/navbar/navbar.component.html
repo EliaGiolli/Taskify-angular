@@ -21,7 +21,7 @@
 
   <i 
     class="theme-toggle"
-    [class]="isDarkMode ? 'fas fa-sun theme-toggle' : 'fas fa-moon theme-toggle'"
+    [class]="currentTheme() === 'dark' ? 'fas fa-sun theme-toggle' : 'fas fa-moon theme-toggle'"
     (click)="toggleTheme()"
     aria-label="Toggle theme"
   ></i>

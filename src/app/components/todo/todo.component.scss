@@ -2,7 +2,7 @@
 
 .todo-wrapper {
     width: 100%;
-    background-color: $color-light;
+    background-color: var(--color-light);
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -11,19 +11,19 @@
 
     h1 {
         font-size: $font-2xl;
-        color: $color-text-accent-dark;
+        color: var(--color-text-accent-dark);
         text-align: center;
         text-transform: uppercase;
         font-weight: bold;
         margin: 0 0 2rem 0; 
         padding-bottom: 1rem;
-        border-bottom: 2px solid $color-primary;
+        border-bottom: 2px solid var(--color-primary);
     }
 
     .empty-state {
         text-align: center;
         padding: 2rem;
-        color: $color-text-secondary;
+        color: var(--color-text-secondary);
         font-style: italic;
     }
 
@@ -36,26 +36,25 @@
             list-style: none; 
             padding: 0;
             margin: 0;
-            columns: 1 !important; // Forza una singola colonna
-            column-count: 1 !important; // Forza una singola colonna
+            columns: 1 !important; 
+            column-count: 1 !important; 
 
             li {
                 padding: 1rem;
-                background-color: rgba($color-primary, 0.05);
+                background-color: rgba(var(--color-primary), 0.05);
                 border-radius: 8px;
-                border-left: 4px solid $color-primary;
+                border-left: 4px solid var(--color-primary);
                 margin-bottom: 0.5rem;
                 transition: all 0.3s ease;
                 min-height: 60px;
                 display: flex;
                 align-items: center;
                 gap: 1rem;
-                color: $color-text-tertiary;
-                break-inside: avoid; // Evita che gli elementi si spezzino tra colonne
-                page-break-inside: avoid; // Supporto per browser più vecchi
+                color: var(--color-text-tertiary);
+                break-inside: avoid; 
 
                 &:hover {
-                    background-color: rgba($color-primary, 0.1);
+                    background-color: rgba(var(--color-primary), 0.1);
                     transform: translateX(4px);
                 }
 
@@ -65,28 +64,28 @@
 
                 // Stili per todos completati
                 &.completed {
-                    background-color: rgba($color-text-secondary, 0.1);
-                    border-left-color: $color-text-secondary;
+                    background-color: rgba(var(--color-text-secondary), 0.1);
+                    border-left-color: var(--color-text-secondary);
                     opacity: 0.7;
 
                     .task-title {
                         text-decoration: line-through;
-                        color: $color-text-secondary;
+                        color: var(--color-text-secondary);
                     }
 
                     .task-number {
-                        background-color: $color-text-secondary;
+                        background-color: var(--color-text-secondary);
                     }
                 }
 
                 // Stili per todos pendenti
                 &.pending {
-                    background-color: rgba($color-primary, 0.05);
-                    border-left-color: $color-primary;
+                    background-color: rgba(var(--color-primary), 0.05);
+                    border-left-color: var(--color-primary);
                 }
 
                 .task-number {
-                    background-color: $color-primary;
+                    background-color: var(--color-primary);
                     color: white;
                     padding: 0.25rem 0.5rem;
                     border-radius: 50%;
@@ -109,18 +108,18 @@
                     text-transform: uppercase;
 
                     &.priority-high {
-                        background-color: rgba($color-accent, 0.2);
-                        color: $color-accent;
+                        background-color: rgba(var(--color-accent), 0.2);
+                        color: var(--color-accent);
                     }
 
                     &.priority-medium {
-                        background-color: rgba($color-secondary, 0.2);
-                        color: $color-secondary;
+                        background-color: rgba(var(--color-secondary), 0.2);
+                        color: var(--color-secondary);
                     }
 
                     &.priority-low {
-                        background-color: rgba($color-text-secondary, 0.2);
-                        color: $color-text-secondary;
+                        background-color: rgba(var(--color-text-secondary), 0.2);
+                        color: var(--color-text-secondary);
                     }
                 }
             }

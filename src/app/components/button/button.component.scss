@@ -1,18 +1,18 @@
 @use 'variables' as *;
 
 .customBtn{
-    background-color: $color-accent;
-    color: $color-text-primary;
+    background-color: var(--color-accent);
+    color: #fff;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
     &:hover{
-        background-color: $color-text-accent-dark;
+        background-color: var(--color-text-accent-dark);
     }
 
     &:focus{
-        outline: 3px solid $color-text-accent-dark; 
+        outline: 3px solid var(--color-text-accent-dark); 
         outline-offset: 2px;
     }
 }
