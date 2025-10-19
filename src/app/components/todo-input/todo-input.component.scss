@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use '../../../styles/variables' as *;
 
 .todo-input-container {
   display: flex;
@@ -30,9 +30,13 @@
   }
   h2{
     font-size: $font-2xl;
-    font-weight: bold;
-    text-transform: uppercase;
     color: var(--color-text-accent-dark);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 2rem 0; 
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-primary);
     
   }
   input,
@@ -44,24 +48,24 @@
     border-radius: 12px;
     font-size: $font-md;
     font-family: inherit;
-    background-color: rgba(var(--color-background-light), 0.95);
-    color: var(--color-text-secondary);
+    background-color: var(--color-placeholder);
+    color: var(--color-light);
     transition: all 0.25s ease;
-    outline: none;
+    outline: var(--color-text-accent-dark);
 
     &::placeholder {
-      color: var(--color-text-secondary);
-      opacity: 0.8;
+      color: var(--color-text-primary);
+      opacity: 1;
     }
 
     &:hover {
       border-color: rgba(var(--color-primary), 0.4);
-      background-color: rgba(var(--color-light), 1);
+      background-color: var(--color-secondary);
     }
 
     &:focus {
       border-color: var(--color-primary);
-      background-color: rgba(var(--color-light), 1);
+      background-color: rgba(var(--color-secondary), 1);
       box-shadow: 0 0 0 4px rgba(var(--color-primary), 0.15);
     }
   }
@@ -72,15 +76,37 @@
   }
 
   select {
-    appearance: none;
-    background-image: linear-gradient(45deg, transparent 50%, var(--color-primary) 50%), 
-                      linear-gradient(135deg, var(--color-primary) 50%, transparent 50%);
-    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
-    background-size: 5px 5px, 5px 5px;
-    background-repeat: no-repeat;
-    cursor: pointer;
+  appearance: none;
+  background-color: var(--color-placeholder);
+  color: var(--color-text-primary);
+  border: 2px solid rgba(var(--color-primary), 0.2);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: $font-md;
+  transition: all 0.25s ease;
+  cursor: pointer;
+
+  option {
+    background-color: var(--color-background-light);
+    color: var(--color-text-primary);
   }
 
+  /* 🎯 Colore per il placeholder option */
+  option:first-of-type {
+    color: var(--color-accent);
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  &:hover {
+    border-color: rgba(var(--color-primary), 0.4);
+  }
+
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary), 0.15);
+  }
+}
   app-button {
     margin-top: 0.5rem;
     align-self: flex-end;

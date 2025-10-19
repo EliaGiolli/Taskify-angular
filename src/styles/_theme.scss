@@ -1,0 +1,27 @@
+:root {
+  /* Main color palette */
+  --color-primary: #dd0031;
+  --color-secondary: #f06529;
+  --color-light: #ffffff;
+  --color-placeholder: #adb5bd;
+
+  /* Light theme defaults */
+  --color-background: #f8f9fa;
+  --color-background-light: #FCFCFC;
+  --color-text-primary: #212529;
+  --color-text-secondary: #6c757d;
+  --color-text-accent-dark: #AA1717;
+  --color-accent: #FF4C4C;
+  
+}
+
+[data-theme='dark'] {
+  --color-background: #1E102A;
+  --color-background-light: #222121;
+  --color-light: #333;
+  --color-accent: #a00b0b;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-text-accent-dark: #de3b3b;
+  --color-placeholder:  #7a7a7a;
+}

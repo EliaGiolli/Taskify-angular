@@ -1,128 +1,124 @@
-@use '_variables' as *;
+@use '../../../styles/variables' as *;
 
 .todo-wrapper {
-    width: 100%;
-    background-color: var(--color-light);
+  width: 100%;
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+
+  h2 {
+    font-size: $font-2xl;
+    color: var(--color-text-accent-dark);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 2rem 0; 
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  .empty-state {
+    text-align: center;
     padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.25s ease;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
 
-    h1 {
-        font-size: $font-2xl;
-        color: var(--color-text-accent-dark);
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin: 0 0 2rem 0; 
-        padding-bottom: 1rem;
-        border-bottom: 2px solid var(--color-primary);
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
-    .empty-state {
-        text-align: center;
-        padding: 2rem;
-        color: var(--color-text-secondary);
-        font-style: italic;
-    }
+    ul {
+      list-style: none; 
+      padding: 0;
+      margin: 0;
 
-    .container {
+      li {
+        padding: 1rem;
+        background-color: var(--color-background-light);
+        border-radius: 8px;
+        border-left: 4px solid var(--color-primary);
+        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+        min-height: 60px;
         display: flex;
-        flex-direction: column;
+        align-items: center;
         gap: 1rem;
+        color: var(--color-text-primary);
+        break-inside: avoid;
 
-        ul {
-            list-style: none; 
-            padding: 0;
-            margin: 0;
-            columns: 1 !important; 
-            column-count: 1 !important; 
-
-            li {
-                padding: 1rem;
-                background-color: rgba(var(--color-primary), 0.05);
-                border-radius: 8px;
-                border-left: 4px solid var(--color-primary);
-                margin-bottom: 0.5rem;
-                transition: all 0.3s ease;
-                min-height: 60px;
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                color: var(--color-text-tertiary);
-                break-inside: avoid; 
-
-                &:hover {
-                    background-color: rgba(var(--color-primary), 0.1);
-                    transform: translateX(4px);
-                }
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-                // Stili per todos completati
-                &.completed {
-                    background-color: rgba(var(--color-text-secondary), 0.1);
-                    border-left-color: var(--color-text-secondary);
-                    opacity: 0.7;
-
-                    .task-title {
-                        text-decoration: line-through;
-                        color: var(--color-text-secondary);
-                    }
-
-                    .task-number {
-                        background-color: var(--color-text-secondary);
-                    }
-                }
-
-                // Stili per todos pendenti
-                &.pending {
-                    background-color: rgba(var(--color-primary), 0.05);
-                    border-left-color: var(--color-primary);
-                }
-
-                .task-number {
-                    background-color: var(--color-primary);
-                    color: white;
-                    padding: 0.25rem 0.5rem;
-                    border-radius: 50%;
-                    font-weight: bold;
-                    font-size: $font-sm;
-                    min-width: 24px;
-                    text-align: center;
-                }
-
-                .task-title {
-                    flex: 1;
-                    font-weight: 500;
-                }
-
-                .task-priority {
-                    padding: 0.25rem 0.5rem;
-                    border-radius: 12px;
-                    font-size: $font-xs;
-                    font-weight: bold;
-                    text-transform: uppercase;
-
-                    &.priority-high {
-                        background-color: rgba(var(--color-accent), 0.2);
-                        color: var(--color-accent);
-                    }
-
-                    &.priority-medium {
-                        background-color: rgba(var(--color-secondary), 0.2);
-                        color: var(--color-secondary);
-                    }
-
-                    &.priority-low {
-                        background-color: rgba(var(--color-text-secondary), 0.2);
-                        color: var(--color-text-secondary);
-                    }
-                }
-            }
+        &:hover {
+          background-color: var(--color-background);
+          transform: translateX(4px);
         }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.completed {
+          background-color: var(--color-background);
+          border-left-color: var(--color-text-secondary);
+          opacity: 0.7;
+
+          .task-title {
+            text-decoration: line-through;
+            color: var(--color-text-secondary);
+          }
+
+          .task-number {
+            background-color: var(--color-text-secondary);
+          }
+        }
+
+        &.pending {
+          background-color: var(--color-background-light);
+          border-left-color: var(--color-primary);
+        }
+
+        .task-number {
+          background-color: var(--color-primary);
+          color: var(--color-light);
+          padding: 0.25rem 0.5rem;
+          border-radius: 50%;
+          font-weight: bold;
+          font-size: $font-sm;
+          min-width: 24px;
+          text-align: center;
+        }
+
+        .task-title {
+          flex: 1;
+          font-weight: 500;
+        }
+
+        .task-priority {
+          padding: 0.25rem 0.5rem;
+          border-radius: 12px;
+          font-size: $font-xs;
+          font-weight: bold;
+          text-transform: uppercase;
+
+          &.priority-high {
+            background-color: var(--color-accent);
+            color: var(--color-light);
+          }
+
+          &.priority-medium {
+            background-color: var(--color-secondary);
+            color: var(--color-light);
+          }
+
+          &.priority-low {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+          }
+        }
+      }
     }
+  }
 }

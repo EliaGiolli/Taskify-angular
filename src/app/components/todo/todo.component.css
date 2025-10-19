@@ -1,0 +1,107 @@
+/* Fonts */
+.todo-wrapper {
+  width: 100%;
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+.todo-wrapper h2 {
+  font-size: 2rem;
+  color: var(--color-text-accent-dark);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 0 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+.todo-wrapper .empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+.todo-wrapper .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.todo-wrapper .container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.todo-wrapper .container ul li {
+  padding: 1rem;
+  background-color: var(--color-background-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-text-primary);
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+.todo-wrapper .container ul li:hover {
+  background-color: var(--color-background);
+  transform: translateX(4px);
+}
+.todo-wrapper .container ul li:last-child {
+  margin-bottom: 0;
+}
+.todo-wrapper .container ul li.completed {
+  background-color: var(--color-background);
+  border-left-color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+.todo-wrapper .container ul li.completed .task-title {
+  text-decoration: line-through;
+  color: var(--color-text-secondary);
+}
+.todo-wrapper .container ul li.completed .task-number {
+  background-color: var(--color-text-secondary);
+}
+.todo-wrapper .container ul li.pending {
+  background-color: var(--color-background-light);
+  border-left-color: var(--color-primary);
+}
+.todo-wrapper .container ul li .task-number {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.875rem;
+  min-width: 24px;
+  text-align: center;
+}
+.todo-wrapper .container ul li .task-title {
+  flex: 1;
+  font-weight: 500;
+}
+.todo-wrapper .container ul li .task-priority {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.todo-wrapper .container ul li .task-priority.priority-high {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+}
+.todo-wrapper .container ul li .task-priority.priority-medium {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+}
+.todo-wrapper .container ul li .task-priority.priority-low {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}/*# sourceMappingURL=todo.component.css.map */
