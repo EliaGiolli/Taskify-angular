@@ -1,12 +1,14 @@
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
+import { CardDirective } from '../../directives/card.directive';
 
 import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-todo',
-  imports: [CommonModule, ButtonComponent],
+  standalone: true,
+  imports: [CommonModule, ButtonComponent, CardDirective],
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })

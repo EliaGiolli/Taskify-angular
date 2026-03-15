@@ -1,17 +1,23 @@
 :root {
-  /* Main color palette */
-  --color-primary: #dd0031;
-  --color-secondary: #f06529;
-  --color-light: #ffffff;
-  --color-placeholder: #adb5bd;
 
-  /* Light theme defaults */
-  --color-background: #f8f9fa;
-  --color-background-light: #FCFCFC;
-  --color-text-primary: #212529;
-  --color-text-secondary: #6c757d;
-  --color-text-accent-dark: #AA1717;
-  --color-accent: #FF4C4C;
+    --color-primary: #dd0031;
+    --color-primary-rgb: 221, 0, 49;
+  
+    --color-secondary: #f06529;
+    --color-secondary-rgb: 240, 101, 41;
+  
+    --color-light: #ffffff;
+  
+    --color-background: #f8f9fa;
+    --color-background-light: #FCFCFC;
+  
+    --color-text-primary: #212529;
+    --color-text-secondary: #6c757d;
+  
+    --color-text-accent-dark: #AA1717;
+    --color-accent: #FF4C4C;
+  
+    --color-placeholder: #adb5bd;
   
 }
 

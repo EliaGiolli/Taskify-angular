@@ -1,28 +1,32 @@
 <section class="todo-wrapper" aria-labelledby="main-title">
     <h2 id="main-title">Your definitive task manager!</h2>
-    <div class="container" *ngIf="hasTasks()">
-        <ul>
-            <li 
-                *ngFor="let todo of taskService.todoList(); index as i" 
-                [ngClass]="{'completed': todo.completed, 'pending': !todo.completed}"
-            >
-                <span class="task-number">{{i + 1}}</span>
-                <span class="task-title">{{todo.title}}</span>
-                <span class="task-priority" [class]="'priority-' + todo.priority">
-                    {{todo.priority}}
-                </span>
-                <span>{{todo.category}}</span>
-                <app-button 
-                    (click)="deleteTodo(todo.id.toString())"
-                    aria-label="delete todos"
-                >
-                    Elimina
-                </app-button>
-            </li>
-        </ul>
-    </div>
-    
-    <div *ngIf="!hasTasks()" class="empty-state">
-        <p>No tasks available!</p>
-    </div>
+
+    @if (hasTasks()) {
+        <div class="container" appCard>
+            <ul>
+                @for (todo of taskService.todoList(); track todo.id; let i = $index) {
+                    <li 
+                        [ngClass]="{'completed': todo.completed, 'pending': !todo.completed}"
+                    >
+                        <span class="task-number">{{ i + 1 }}</span>
+                        <span class="task-title">{{ todo.title }}</span>
+                        <span class="task-priority" [class]="'priority-' + todo.priority">
+                            {{ todo.priority }}
+                        </span>
+                        <span>{{ todo.category }}</span>
+                        <app-button 
+                            (click)="deleteTodo(todo.id.toString())"
+                            aria-label="delete todos"
+                        >
+                            Elimina
+                        </app-button>
+                    </li>
+                }
+            </ul>
+        </div>
+    } @else {
+        <div class="empty-state">
+            <p>No tasks available!</p>
+        </div>
+    }
 </section>

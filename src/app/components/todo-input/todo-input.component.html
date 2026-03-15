@@ -10,8 +10,9 @@
       <label for="todo-title">Title</label>
       <input
         id="todo-title"
-        name="todoTitle"
-        [(ngModel)]="todoTitle"
+        [ngModel]="title()"
+        name="title"
+        (ngModelChange)="title.set($event)"
         placeholder="Enter todo title"
         required
       />
@@ -21,14 +22,15 @@
       <label for="todo-priority">Priority</label>
       <select
         id="todo-priority"
-        name="todoPriority"
-        [(ngModel)]="todoPriority"
+        [ngModel]="priority()"
+        name="priority"
+        (ngModelChange)="priority.set($event)"
         required
       >
-        <option value="" disabled selected>Select priority</option>
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
+        <option value="" disabled>Select priority</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
       </select>
     </div>
 
@@ -36,8 +38,9 @@
       <label for="todo-category">Category</label>
       <input
         id="todo-category"
-        name="todoCategory"
-        [(ngModel)]="todoCategory"
+        [ngModel]="category()"
+        name="category"
+        (ngModelChange)="category.set($event)"
         placeholder="Enter category"
       />
     </div>
@@ -47,12 +50,13 @@
       <input
         id="todo-due-date"
         type="date"
-        name="todoDueDate"
-        [(ngModel)]="todoDueDate"
+        [ngModel]="dueDate()"
+        name="date"
+        (ngModelChange)="dueDate.set($event)"
       />
     </div>
 
     
-    <app-button type="submit" (clicked)="addTodo()">Add Todo</app-button>
+    <app-button type="submit">Add Todo</app-button>
   </form>
 </div>
